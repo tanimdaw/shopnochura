@@ -1,5 +1,39 @@
 Shopnochura::Application.routes.draw do
-  get "public/home"
+  
+  get "password_resets/create"
+
+  get "password_resets/edit"
+
+  get "password_resets/update"
+
+  get "sessions/new"
+
+  get "users/new"
+
+  root :to => 'public#home'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  resources :companies, only: [:index]
+
+
+  get "signup" => "users#new", :as => "signup"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+
+  resources :users do
+    member do
+      get :activate
+    end
+  end
+  
+  resources :sessions
+
+  resources :password_resets
+
+
+  # get "public/home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

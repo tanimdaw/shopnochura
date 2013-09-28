@@ -1,0 +1,91 @@
+<!-- <form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+    <div class="col-lg-10">
+      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
+    <div class="col-lg-10">
+      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form> -->
+
+
+
+
+<%= form_for @user, :class => "form-horizontal", :role => "form" do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h4>Please correct the error(s) below:</h4>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+
+  <div class="form-group">
+    <%= f.label :email, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :placeholder => "Email Address", 
+      :class => 'form-control', :required => true %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.password_field :password, :placeholder => "Password", 
+      :class => 'form-control', :required => true %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.password_field :password_confirmation, :placeholder => "Retype Password", 
+      :class => 'form-control', :required => true %>
+    </div>
+  </div>
+
+
+  <!-- <div class="notice">
+    By clicking "Sign up" you confirm that you accept the
+    <%= link_to "Terms of Service", "javascript:void(0)", :target => "_blank" %>
+    and
+    <%= link_to "Privacy Policy", "javascript:void(0)", :target => "_blank" %>
+  </div> -->
+
+
+  
+
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= submit_tag "Sign up", :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+
+
+<% end %>

@@ -1,0 +1,23 @@
+.top-navigation {
+	margin: 7px 0px;
+}
+
+.top-navigation li.active a {
+	background-color: #bbdb96;
+}
+
+.top-navigation li.active:hover a {
+	background-color: #bbdb96;
+}
+
+.top-navigation li a {
+	color: #b0352e;
+}
+
+.head-portion {
+	border-bottom: 1px solid #bbdb96;
+}
+
+.inner-container {
+	padding-top: 20px;
+}

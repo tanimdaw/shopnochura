@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Shopnochura</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ShopnoChura</title>
+    <%= csrf_meta_tags %>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <%= stylesheet_link_tag    "application",  :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag "ie" %>
+    <![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
+  <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+<header id="page-header">
+  <div class="top-bar">
+    <div class="container head-portion">
+        <div class = "row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <%= link_to image_tag("logo.png"), root_path %>      
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <ul class="nav nav-pills top-navigation">
+              <li class="active"><a href="#">Home</a></li>
+              <% if current_user %>
+                <li><%= link_to "Log out", logout_path %></li>
+              <% else %>
+                <li><%= link_to "Sign Up", signup_path %></li>
+                <li><%= link_to "Log In", login_path %></li> 
+              <% end %>
+            </ul>
+          </div>  
+         </div> 
+    </div>
+  </div>
 
-<%= yield %>
+  
+  
+</header>
+
+<div id="page-content">
+  <div class="container">
+    <div class="inner-container">
+
+      
+      
+
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: name %>
+      <% end -%>
+
+
+      <%= yield %>
+
+
+
+
+
+    </div><!--/inner-container-->
+  </div><!--/container-->
+</div> <!--/#page-content-->
+
+
 
 </body>
 </html>
+
