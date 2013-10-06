@@ -1,0 +1,80 @@
+<div class="row shopno-theme">
+  <%= form_for @review, :html => {:class => "form-horizontal", :role => "form"}  do |f| %>
+
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+
+    
+  <% if @review.errors.any? %>
+    <div class="error_messages">
+      <h4>Please correct the error(s) below:</h4>
+      <ul>
+        <% for message in @review.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.label :title, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :placeholder => "title", 
+      :class => 'form-control', :required => true %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content, "Review", :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_area :content, :placeholder => "Description", 
+      :class => 'form-control', :required => true, :rows => "15" %>
+    </div>
+  </div>
+
+  </div>
+
+
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+
+  	<div class="form-group">
+    <%= f.label :positive_sides, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_area :positive_sides, :placeholder => "Positive sides", 
+      :class => 'form-control', :required => true, :rows => "8" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :negative_sides, :class => "col-lg-2 control-label" %>
+    <div class="col-lg-10">
+      <%= f.text_area :negative_sides, :placeholder => "Negative sides", 
+      :class => 'form-control', :required => true, :rows => "8" %>
+    </div>
+  </div>
+
+
+
+  	<div class="form-group">
+	    <div class="col-lg-offset-2 col-lg-10">
+	      <%= submit_tag "Post Review", :class => 'btn btn-success' %>
+	    </div>
+	  </div>
+
+
+
+  </div>	
+
+
+
+
+
+<% end %>
+
+</div>
+
+
+
+

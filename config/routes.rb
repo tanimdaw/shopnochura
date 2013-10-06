@@ -1,5 +1,6 @@
 Shopnochura::Application.routes.draw do
   
+
   get "password_resets/create"
 
   get "password_resets/edit"
@@ -15,7 +16,7 @@ Shopnochura::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :companies, only: [:index]
+  resources :companies, only: [:index, :show]
 
 
   get "signup" => "users#new", :as => "signup"
@@ -27,6 +28,8 @@ Shopnochura::Application.routes.draw do
       get :activate
     end
   end
+
+  resources :reviews
   
   resources :sessions
 

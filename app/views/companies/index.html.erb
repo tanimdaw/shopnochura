@@ -1,25 +1,41 @@
-<h1>Listing companies</h1>
+<!-- <h1>Listing companies</h1> -->
 
-<table>
+<div class="page-header" style="border-bottom: none;">
+  <h1><small>Companies</small></h1>
+</div>
+
+
+<table class="table table-hover">
   <tr>
-    <th>Title</th>
-    <th>Address</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td>Title</td>
+    <td>Address</td>
+    <td></td>
   </tr>
 
 <% @companies.each do |company| %>
-  <tr>
-    <td><%= company.title %></td>
-    <td><%= company.address %></td>
-    <td><%= link_to 'Show', company %></td>
-    <td><%= link_to 'Edit', edit_company_path(company) %></td>
-    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  
+    <tr>
+      
+      <td>
+        <%= link_to company_path(company), :class => "invisible-link" do %>
+            <%= company.title %>
+        <% end %>    
+      </td>
+      
+      <td>
+        <%= link_to company_path(company), :class => "invisible-link" do %>
+          <%= company.address %>
+        <% end %>
+      </td>
+
+      <td>
+        <%= link_to "Write a review", new_review_path, :class => "btn btn-success"  %>
+      </td>
+
+    </tr>
+   
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Company', new_company_path %>

@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
 
   attr_accessible :username, :email, :password, :password_confirmation
 
+  has_many :reviews
+
+
+
+
   validates_length_of :password, :minimum => 6, :message => "password must be at least 6 characters long", :if => :password
   validates_confirmation_of :password, :message => "should match confirmation", :if => :password
 

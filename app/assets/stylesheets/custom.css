@@ -21,3 +21,45 @@
 .inner-container {
 	padding-top: 20px;
 }
+
+.shopno-theme .form-control:focus {
+	border-color: #b8da92 !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 
+	0 0 8px rgba(217,235,198,0.6) !important;
+}
+
+.shopno-theme label {
+
+	cursor: pointer;
+
+	/*color: #ddb97d;*/
+
+	color: #806f68;
+}
+
+.login-btn {
+	margin-top: 20px;
+}
+
+.forget-link {
+	color: #B0352E;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.invisible-link {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: inherit;
+}
+
+.invisible-link:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+.low-paded {
+	margin: 5% 0 0 5%;
+}

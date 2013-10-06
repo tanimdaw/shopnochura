@@ -37,4 +37,7 @@ Shopnochura::Application.configure do
 
   config.action_mailer.default_url_options = { :host => "0.0.0.0:3000" }
 
+  config.assets.cache_store = :null_store  # Disables the Asset cache
+  config.sass.cache = false  # Disable the SASS compiler cache
+
 end
