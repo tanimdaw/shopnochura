@@ -1,5 +1,5 @@
 <div class="row shopno-theme">
-  <%= form_for @review, :html => {:class => "form-horizontal", :role => "form"}  do |f| %>
+  <%= form_for [@company, @review], :html => {:class => "form-horizontal", :role => "form"}  do |f| %>
 
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
@@ -15,7 +15,6 @@
       </ul>
     </div>
   <% end %>
-
 
   <div class="form-group">
     <%= f.label :title, :class => "col-lg-2 control-label" %>
