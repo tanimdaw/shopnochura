@@ -1,9 +1,15 @@
+/*
+#95c11e - green
+#ec790d - orange
+#27338a - blue
+*/
+
 .top-navigation {
 	margin: 7px 0px;
 }
 
 .top-navigation li.active a {
-	background-color: #bbdb96;
+	background-color: #95c11e;
 }
 
 .top-navigation li.active:hover a {
@@ -11,11 +17,14 @@
 }
 
 .top-navigation li a {
-	color: #b0352e;
+	color: #27338a;
 }
 
 .head-portion {
-	border-bottom: 1px solid #bbdb96;
+	/*border-bottom: 1px solid #bbdb96;*/
+	border-bottom: 1px solid #95c11e;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .inner-container {
@@ -63,3 +72,52 @@
 .low-paded {
 	margin: 5% 0 0 5%;
 }
+
+/* ==========home page =========*/
+
+.single-box {
+	display: inline-block; 
+	float: left; 
+	padding: 5px; 
+	border-radius: 5px 5px 5px 5px; 
+	margin: 10px; 
+	width: 213px; 
+	height: 180px; 
+	border: 1px solid #CCCCCC;
+
+	-moz-box-shadow:    1px 1px 5px 3px #ccc;
+  -webkit-box-shadow: 1px 1px 5px 3px #ccc;
+  box-shadow:         1px 1px 5px 3px #ccc;
+}
+
+.single-box .inner-cell {
+	style="display: inline-block; 
+	float: left;  
+	width: 100%;    
+	margin-bottom: 5px; 
+	padding: 3px; 
+	border-radius: 5px 5px 5px 5px; 
+
+}
+
+.single-box .com-name {
+	/*background-color: rgb(236, 121, 13); */
+	/*font-weight: bold; */
+	font-size: 17px;
+	color: #333333;
+	border: 1px solid rgb(149, 193, 21);
+	text-align: center;
+}
+
+.single-box .rev-title {
+	color: #27338A;
+    font-size: 16px;
+    font-style: italic;
+    /*font-weight: bold;*/
+    margin-top: 12px;
+}
+
+.single-box .rev-cont {
+	height: 65px;
+}
+

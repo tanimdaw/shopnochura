@@ -1,2 +1,17 @@
-<h1>Public#home</h1>
-<p>Find me in app/views/public/home.html.erb</p>
+<% @reviews.each do |review| %>
+	<div class="single-box">
+			<div class="inner-cell com-name well">
+				<%= review.company.title %>
+			</div>
+			<div class="inner-cell rev-title">
+				<%= review.title %>
+			</div>
+			<div class="inner-cell rev-cont">
+				<%= truncate(review.content, length: 90)  %>
+			</div>
+			<div class="inner-cell read-more">
+				<%= link_to "read more", company_review_path(review.company, review), :class => "pull-right"  %>
+			</div>
+	</div>	
+<% end %>
+<div class="clear" style="clear: both;"></div>

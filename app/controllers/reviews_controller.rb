@@ -21,8 +21,11 @@ class ReviewsController < ApplicationController
   end
 
   def index
+    @reviews = Review.all
   end
 
   def show
+    @company = Company.find(params[:company_id])
+    @review = Review.find(params[:id])
   end
 end
