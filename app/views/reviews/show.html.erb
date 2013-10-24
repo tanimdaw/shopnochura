@@ -1,38 +1,47 @@
 <div class="row">
+	<div class="col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1 col-xs-12">
+		<h3>
+	<%= @review.company.title %>
+</h3>
+	</div>	
+</div>	
 
-<div class="col-md-6 col-sm-6" style="border-bottom: 1px solid #ec790d;">
-	<%= @company.title %>
-</div>
-</div>
 
-<div class="row">
 
-<div class="col-md-6 col-sm-6" style="border-bottom: 1px solid #ec790d;color: #27338a; font-style: italic; font-size: 15px;">
-	<%= @review.title %>
-</div>
-
-</div>
 
 <div class="row">
 
-<div class="col-md-6 col-sm-6" style="border-bottom: 1px solid #ec790d;">
-	<%= @review.content %>
-</div>
+	<div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
+		<div class="row">
 
-</div>
+			<div class="col-md-12 col-sm-12" style="color: #27338a; font-style: italic; font-size: 20px;font-weight: bold;margin-bottom: 15px;">
+				<%= @review.title %>
+			</div>
 
-<div class="row">
+			<div class="col-md-12 col-sm-12" style="line-height:150%;margin-bottom: 20px;">
+				<%= @review.content %>
+			</div>
 
-<div class="col-md-6 col-sm-6" style="border-bottom: 1px solid #ec790d;color: #95c11e;font-weight: bold;">
-	<%= @review.positive_sides %>
-</div>
+		</div>
+	</div>	
 
-</div>
+	<div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 well" style="color: #95c11e;font-weight: bold;margin-bottom: 20px;">
+				<h3>
+					Positive Sides:
+				</h3>	
+				<%= @review.positive_sides %>
+			</div>
+			<div class="col-md-12 col-sm-12 well" style="color: #ec790d;font-weight: bold;margin-bottom: 20px;">
+				<h3>
+					Negative Sides:
+				</h3>	
+				<%= @review.negative_sides %>
+			</div>
+		</div>
+	</div>	
 
-<div class="row">
 
-<div class="col-md-6 col-sm-6" style="border-bottom: 1px solid #ec790d;color: #ec790d;font-weight: bold;">
-	<%= @review.negative_sides %>
-</div>
 
-</div>
+</div>	

@@ -1,6 +1,6 @@
 <% @reviews.each do |review| %>
-	<div class="single-box">
-			<div class="inner-cell com-name well">
+	<div class="single-box col-lg-3 col-md-3 col-sm-5">
+			<div class="inner-cell com-name">
 				<%= review.company.title %>
 			</div>
 			<div class="inner-cell rev-title">
@@ -10,8 +10,7 @@
 				<%= truncate(review.content, length: 90)  %>
 			</div>
 			<div class="inner-cell read-more">
-				<%= link_to "read more", company_review_path(review.company, review), :class => "pull-right"  %>
+				<%= link_to "read more", review_path(review), :class => "pull-right"  %>
 			</div>
 	</div>	
 <% end %>
-<div class="clear" style="clear: both;"></div>

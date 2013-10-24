@@ -17,7 +17,7 @@ Shopnochura::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :companies, only: [:index, :show] do
-    resources :reviews, except: [:index]
+    resources :reviews, except: [:index, :show]
   end  
 
 
@@ -31,7 +31,7 @@ Shopnochura::Application.routes.draw do
     end
   end
 
-  resources :reviews, only: [:index]
+  resources :reviews, only: [:index, :show]
   
   resources :sessions
 
