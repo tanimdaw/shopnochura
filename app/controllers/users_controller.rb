@@ -22,5 +22,11 @@ class UsersController < ApplicationController
 			render :new
 		end	
 	end
+
+	def signup_login
+		@user = User.new
+	end
+
+
   
 end

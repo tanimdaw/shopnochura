@@ -86,7 +86,7 @@
 	border-radius: 5px 5px 5px 5px; 
 	margin: 0 3% 2%; 
 	/*width: 213px; */
-	height: 206px; 
+	height: 186px; 
 	border: 1px solid #CCCCCC;
 
 	-moz-box-shadow:    1px 1px 5px 3px #ccc;
@@ -125,7 +125,7 @@
     font-style: italic;
     /*font-weight: bold;*/
     margin-top: 10px;
-    height: 52px;
+    height: 32px;
 }
 
 .single-box .rev-cont {

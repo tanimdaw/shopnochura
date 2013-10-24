@@ -57,11 +57,14 @@
     <div class="inner-container">
       <div class="row right-small-margin">
       
-      
-
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, class: name %>
-      <% end -%>
+      <% if flash.present? %>
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: name %>
+          <% end -%>
+        </div>
+      <% end %>
 
 
       <%= yield %>

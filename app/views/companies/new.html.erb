@@ -1,0 +1,38 @@
+<div class="row shopno-theme">
+	<%= form_for @company, :html => {:class => "form-horizontal", :role => "form"}  do |f| %>
+		<% if @company.errors.any? %>
+		    <div class="error_messages">
+		      <h4>Please correct the error(s) below:</h4>
+		      <ul>
+		        <% for message in @company.errors.full_messages %>
+		          <li><%= message %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+		  <div class="form-group">
+		    <%= f.label :title, "Name", :class => "col-lg-2 control-label" %>
+		    <div class="col-lg-10">
+		      <%= f.text_field :title, :placeholder => "Company Name", 
+		      :class => 'form-control', :required => true %>
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <%= f.label :address, "Address", :class => "col-lg-2 control-label" %>
+		    <div class="col-lg-10">
+		      <%= f.text_area :address, :placeholder => "Company Address", 
+		      :class => 'form-control', :required => true, :rows => "4" %>
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <div class="col-lg-offset-2 col-lg-10">
+		      <%= submit_tag "Submit and write review of your company", :class => 'btn btn-success' %>
+		    </div>
+		  </div>
+
+
+	<% end %>
+</div>

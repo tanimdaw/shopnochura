@@ -1,16 +1,33 @@
-<% @reviews.each do |review| %>
-	<div class="single-box col-lg-3 col-md-3 col-sm-5">
-			<div class="inner-cell com-name">
-				<%= review.company.title %>
-			</div>
-			<div class="inner-cell rev-title">
-				<%= review.title %>
-			</div>
-			<div class="inner-cell rev-cont">
-				<%= truncate(review.content, length: 90)  %>
-			</div>
-			<div class="inner-cell read-more">
-				<%= link_to "read more", review_path(review), :class => "pull-right"  %>
-			</div>
-	</div>	
-<% end %>
+<div class="col-md-12">
+
+	<div class="row">
+		<div class="col-md-11 text-right" style="color: #27338A;
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 20px;">
+			Add a review about your company and help others
+			<%= link_to "Write a review", companies_path, :class => "btn btn-warning", :type => "button" %>
+		</div>	
+	</div>
+
+	<div class="row">	
+		<% @reviews.each do |review| %>
+			<div class="single-box col-lg-3 col-md-3 col-sm-5">
+					<div class="inner-cell com-name">
+						<%= review.company.title %>
+					</div>
+					<div class="inner-cell rev-title">
+						<%= review.title %>
+					</div>
+					<div class="inner-cell rev-cont">
+						<%= truncate(review.content, :length => 300) %>
+					</div>
+					<div class="inner-cell read-more">
+						<%= link_to "read more", review_path(review), :class => "pull-right"  %>
+					</div>
+			</div>	
+		<% end %>
+    </div>
+
+
+</div>

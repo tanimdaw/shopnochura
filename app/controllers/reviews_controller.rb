@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
+
+  
   def new
-    @company = Company.find(params[:company_id])
-    @review = @company.reviews.build
+    @company = Company.find(params[:company_id]) if params[:company_id]
+    @review = @company.present? ? @company.reviews.build : Review.new
   end
 
   def create
@@ -27,4 +29,8 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
   end
+
+
+  
+
 end

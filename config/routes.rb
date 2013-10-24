@@ -11,12 +11,14 @@ Shopnochura::Application.routes.draw do
 
   get "users/new"
 
+  get "signup-login" => "users#signup_login", :as => "signup_login"
+
   root :to => 'public#home'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :companies, only: [:index, :show] do
+  resources :companies do
     resources :reviews, except: [:index, :show]
   end  
 
@@ -31,7 +33,7 @@ Shopnochura::Application.routes.draw do
     end
   end
 
-  resources :reviews, only: [:index, :show]
+  resources :reviews
   
   resources :sessions
 
