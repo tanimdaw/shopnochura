@@ -1,6 +1,14 @@
 Shopnochura::Application.routes.draw do
   
 
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback" # for use with Github
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+
+  get "oauths/oauth"
+
+  get "oauths/callback"
+
   get "password_resets/create"
 
   get "password_resets/edit"

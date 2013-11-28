@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
       user = User.authenticate_regardless_of_activation_state params[:email], params[:password]
       if user && user.activation_state == 'pending'
         auto_login(user)
+        puts "i got here  :)============================================="
         redirect_back_or_to root_url, :notice => "Logged in. But, check ur email address to activate ur account."
       else
         flash.now.alert = "Email or password was invalid"

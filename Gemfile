@@ -5,7 +5,8 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+# gem 'pg'
+gem 'mysql2'
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
 gem 'activeadmin'
@@ -24,6 +25,8 @@ end
 
 gem "jquery-rails", "< 3.0.0"
 gem "sorcery"
+
+gem "mechanize"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

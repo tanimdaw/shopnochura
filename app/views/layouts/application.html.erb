@@ -54,10 +54,9 @@
 
 <div id="page-content">
   <div class="container">
-    <div class="inner-container">
-      <div class="row right-small-margin">
-      
-      <% if flash.present? %>
+    
+    <!-- <div style="min-height: 36px;"> -->
+    <% if flash.present? %>
         <div class="alert alert-success alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <% flash.each do |name, msg| -%>
@@ -65,13 +64,10 @@
           <% end -%>
         </div>
       <% end %>
-
-
-      <%= yield %>
-
-
-
-
+    <!-- </div> -->
+    <div class="inner-container">
+      <div class="row right-small-margin">
+        <%= yield %>
     </div><!--/row right-small-margin-->
     </div><!--/inner-container-->
   </div><!--/container-->

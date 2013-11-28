@@ -4,11 +4,11 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
-  database: shopnochura_development 
-  username: postgres
-  password: 123456
+  database: bdcareerinfo_development 
+  username: root
+  password: root
   host: localhost
 
 # Warning: The database defined as "test" will be erased and

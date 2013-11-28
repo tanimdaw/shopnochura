@@ -142,3 +142,21 @@
     display: none;
   }
 }*/
+
+
+/*===========================
+		alert board
+==========================*/
+
+
+div.alert {
+	/*position: relative; */
+	/*bottom: 20px;*/
+	padding: 6px; 
+	margin-bottom: 0px; 
+	margin-top: 2px
+}
+
+.alert-dismissable .close {
+	right: 2px;
+}

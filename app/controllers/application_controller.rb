@@ -4,9 +4,12 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def require_login
-  	redirect_to signup_login_path unless current_user
-  end	
+  def not_authenticated
+  	# redirect_to signup_login_path unless current_user
+    redirect_to signup_login_path, :notice => "First log in to view this page."
+  end
+
+  
 
 
 end
